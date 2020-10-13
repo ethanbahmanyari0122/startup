@@ -1,14 +1,103 @@
-<!DOCTYPE html>
+<!doctype html>
 <?php
 $db = mysqli_connect('localhost','root','root','startup')
- or die('Error connecting to MySQL server.');
+ or die('Error connecting to MySQL server.'
+$sql = "INSERT INTO customer (firstname, lastname, birthday, street, houseNr, plz, city, phoneNr, email)
+VALUES ($_GET["fname"],$_GET["lname"], $_GET["birthday"], $_GET["street"], $_GET["houseNr"], $_GET["plz"], $_GET["city"], $_GET["phoneNr"], $_GET["email"])";
 ?>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <title>Title</title>
+  <meta charset="utf-8">
+  <title>Ingredients</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta property="og:title" content="">
+  <meta property="og:type" content="">
+  <meta property="og:url" content="">
+  <meta property="og:image" content="">
+
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="apple-touch-icon" href="icon.png">
+  <!-- Place favicon.ico in the root directory -->
+
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/main.css">
+
+  <meta name="theme-color" content="#fafafa">
+
 </head>
+
 <body>
-<h1>PHP connect to MySQL</h1>
+
+<!-- Add your site or application content here -->
+<div class="navbar">
+  <a href="index.html">Home</a>
+  <a href="ingredients.html">Ingredients</a>
+  <a href="recipes.html">Recipes</a>
+  <a href="#" class="right">Contact Us</a>
+</div>
+<div class="header">
+  <h1>Kraut Rüben</h1>
+  <p>Where you get FAT!</p>
+</div>
+
+<div class="row">
+  <div class="side"><p>We are on a mission to create extraordinary value for the global nutrition and food ingredient
+    industry by leveraging the ingredientsonline.com™ e-commerce platform around the world to build an online global
+    community of buyers and sellers.</br></br>
+
+    By using digital technology we are extending the art of conducting business on the tradeshow floor onto a highly
+    efficient, cutting edge, transparent, neutral, e-commerce platform.
+    The platform provides infinite nutrition and food ingredient choices from qualified global sellers for global
+    buyers.</br></br> By hosting a highly efficient, completely transparent platform for all qualified buyers and
+    sellers, we are delivering on our vision of making ingredientsonline.com “the global e-commerce solution</p></div>
+  <div class="main">
+    <div class="container">
+
+    <div class="response_msg"></div>
+  </div>
+</div>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script>
+  $(document).ready(function () {
+    $("#contact-form").on("submit", function (e) {
+      e.preventDefault();
+      if ($("#contact-form [name='lname']").val() === '') {
+        $("#contact-form [name='lname']").css("border", "1px solid red");
+      } else if ($("#contact-form [name='email']").val() === '') {
+        $("#contact-form [name='email']").css("border", "1px solid red");
+      } else {
+        $("#loading-img").css("display", "block");
+        var sendData = $(this).serialize();
+        $.ajax({
+          type: "POST",
+          url: "get_response.php",
+          data: sendData,
+          success: function (data) {
+            $("#loading-img").css("display", "none");
+            $(".response_msg").text(data);
+            $(".response_msg").slideDown().fadeOut(3000);
+            $("#contact-form").find("input[type=text], input[type=email], textarea").val("");
+          }
+        });
+      }
+    });
+    $("#contact-form input").blur(function () {
+      var checkValue = $(this).val();
+      if (checkValue != '') {
+        $(this).css("border", "1px solid #eeeeee");
+      }
+    });
+  });
+</script>
+<div class="footer">
+  <a href="datenschutz.html">Datenschutz</a>
+</div>
+</div>
+</div>
 </body>
+
 </html>
