@@ -23,7 +23,7 @@ if ($conn->connect_error) {
     if (!$result = $conn->query($sql)) {
       die('There was an error running the query [' . $conn->error . ']');
     } else {
-      echo "Thank you! We will contact you soon";
+      header('Location: recipe_ingredients.html');
 
   }
 ?>
