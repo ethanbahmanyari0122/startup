@@ -13,12 +13,13 @@ html {
   padding: 80px; /* some padding */
   text-align: center; /* center the text */
   background: url("https://previews.123rf.com/images/vicushka/vicushka1510/vicushka151000080/46966427-fresh-delicious-ingredients-for-healthy-cooking-or-salad-making-on-rustic-background-top-view-banner.jpg"); /* green background */
-  color: white; /* white text color */
+  color: black; /* white text color */
 }
 
 /* Increase the font size of the <h1> element */
 .header h1 {
   font-size: 40px;
+  color: black;
 }
 /* Style the top navigation bar */
 .navbar {

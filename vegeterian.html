@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Vegan Recipes</title>
+  <link rel="stylesheet" href="css/ingredient.css">
+  <link rel="stylesheet" href="css/shoppingCart.css">
+  <script src="js/readMore.js" async></script>
+  <script src="js/shoppingCart.js" async></script>
+</head>
+<body>
+<div class="navbar">
+  <a href="index.html">Kraut & Rüben</a>
+  <a href="ingredient.html">Ingredients</a>
+  <a href="recipes.html">Recipes</a>
+  <a href="#" class="right">Contact Us</a>
+</div>
+<div class="column">
+  <div class="card">
+    <img class="shop-item-image" src="https://www.inspiredtaste.net/wp-content/uploads/2019/02/Vegetable-Spaghetti-Recipe-1-1200.jpg" alt="salad" style="width:100%">
+    <h1 class="shop-item-title">Pasta</h1>
+    <p class="shop-item-desc">12 ounces spaghetti</br>
+      4 tablespoons olive oil</br>
+      1 cup (140 grams) chopped onion</br><span id="dots">...</span><span id="more">
+      2 medium zucchini, chopped (1/2 pound)</br>
+      2 medium yellow squash, chopped (1/2 pound)</br>
+      3 garlic cloves, minced (1 tablespoon)</br>
+      1/2 teaspoon dried oregano</br>
+      1/4 teaspoon red pepper flakes</br>
+      2 tablespoons tomato paste</br>
+      1 (28-ounce) can whole peeled tomatoes</br>
+      One (12-ounce) jar roasted red peppers, drained and cut into 1/2-inch pieces (1 heaping cup)</br>
+      2 to 3 teaspoons mushroom powder</br>
+      5 cups (1/2 pound) spinach leaves</br>
+      Handful fresh basil leaves</br>
+      Salt and fresh ground black pepper</br>
+      Parmesan cheese or nutritional yeast for serving</span></p>
+    <button onclick="myFunction()" id="myBtn">Read more</button>
+    <p class="price">$ 21.5</p>
+
+    <p><button  class="btn btn-primary shop-item-button" type="button">Add to Cart</button></p>
+  </div>
+</div>
+\<div class="footer">
+  <section class="container content-section">
+    <h2 class="section-header">CART</h2>
+    <div class="cart-row">
+      <span class="cart-item cart-header cart-column">ITEM</span>
+      <span class="cart-price cart-header cart-column">PRICE</span>
+      <span class="cart-quantity cart-header cart-column">QUANTITY</span>
+    </div>
+    <div class="cart-items">
+      <div class="cart-row">
+        <div class="cart-item cart-column">
+          <img class="cart-item-image" src="https://img.rewe-static.de/8287161/29168136_digital-image.png?resize=1320px:1320px&output-quality=90&output-format=image/webp&background-color=FFFFFF" width="100" height="100">
+          <span class="cart-item-title">Salami</span>
+        </div>
+        <span class="cart-price cart-column">$0.99</span>
+        <div class="cart-quantity cart-column">
+          <input class="cart-quantity-input" type="number" value="1">
+          <button class="btn btn-danger" type="button">REMOVE</button>
+        </div>
+      </div>
+      <div class="cart-row">
+        <div class="cart-item cart-column">
+          <img class="cart-item-image" src="https://img.rewe-static.de/1116770/1216800_digital-image.png?resize=1320px:1320px&output-quality=90&output-format=image/webp&background-color=FFFFFF"  width="100" height="100">
+          <span class="cart-item-title">Gemüsebruhe</span>
+        </div>
+        <span class="cart-price cart-column">$0.2</span>
+        <div class="cart-quantity cart-column">
+          <input class="cart-quantity-input" type="number" value="2">
+          <button class="btn btn-danger" type="button">REMOVE</button>
+        </div>
+      </div>
+    </div>
+    <div class="cart-total">
+      <strong class="cart-total-title">Total</strong>
+      <span class="cart-total-price">$1.39</span>
+    </div>
+    <button class="btn btn-primary btn-purchase" type="button">PURCHASE</button>
+  </section>
+</div>
+</body>
+
+</html>
